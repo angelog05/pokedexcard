@@ -21,3 +21,16 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Next files
+/.next
+/.next/cache
+.next/
+\.next
+
+# Optional REPL history
+.node_repl_history
+.next
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
