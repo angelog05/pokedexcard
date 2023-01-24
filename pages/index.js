@@ -5,7 +5,7 @@ import fetch from "isomorphic-fetch";
 const Index = (props) => {
 
   return (
-    <div>
+    <div className="main-content">
       <Head>
         <title>Home</title>
       </Head>

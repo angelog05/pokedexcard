@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+node_modules
 /.pnp
 .pnp.js
 
@@ -32,5 +33,9 @@ yarn-error.log*
 .node_repl_history
 .next
 
+
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
+node_modules/
+.next/
+.next/cache/
