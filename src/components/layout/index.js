@@ -12,17 +12,9 @@ const Layout = (props) => {
   }, []);
 
   return (
-    <div>
-      <Head>
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/united/bootstrap.min.css"
-        />
-      </Head>
+    <div className="pl-3 pr-3 pb-6 bg-primary-400">
       <Nav />
-      <div className="main-content container d-flex justify-content-center">
-        {props.children}
-      </div>
+      <div className="flex justify-center">{props.children}</div>
     </div>
   );
 };

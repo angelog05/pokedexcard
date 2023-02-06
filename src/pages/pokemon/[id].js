@@ -2,7 +2,6 @@ import Layout from "../../components/layout";
 import Head from "next/head";
 import fetch from "isomorphic-fetch";
 
-
 const Pokemon = ({ pokemon }) => {
   return (
     <div>
@@ -10,10 +9,10 @@ const Pokemon = ({ pokemon }) => {
         <title>{pokemon.name.toUpperCase()}</title>
       </Head>
       <Layout>
-        <div className="text-center">
+        <section className="md:flex bg-slate-100 rounded-xl" style={{ border: ''}}>
           <h1>{pokemon.name.toUpperCase()}</h1>
           <img src={`${pokemon.sprites.other.home.front_default}`} />
-        </div>
+        </section>
       </Layout>
     </div>
   );
