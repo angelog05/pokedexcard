@@ -1,5 +1,4 @@
 import Nav from "../nav";
-import Head from "next/head";
 import { gsap } from "gsap";
 import { useEffect } from "react";
 
