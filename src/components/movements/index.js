@@ -1,24 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+
+import BoxInfo from './boxinfo';
 
 function Movements({ movements }) {
-  const BoxInfo = ({
-    name = "Default ability",
-    description = "Default description",
-  }) => (
-    <aside className="mb-3 p-2 shadow-sm rounded-lg flex justify-between">
-      <h1>{name}</h1>
-      <section>+</section>
-    </aside>
-  );
-
+  
   return (
-    <section className="max-h-40 bg-scroll overflow-auto mt-2" style={{ border: ''}}>
-      <BoxInfo />
-      <BoxInfo />
-      <BoxInfo />
-      <BoxInfo />
-      <BoxInfo />
-      <BoxInfo />
+    <section className="max-h-40 bg-scroll overflow-auto mt-2">
+      {movements.map((mov) => (
+        <BoxInfo name={mov.ability.name} urlDescription={mov.ability.url} />
+      ))}
     </section>
   );
 }
