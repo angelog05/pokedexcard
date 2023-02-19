@@ -7,7 +7,7 @@ function Movements({ movements }) {
   return (
     <section className="max-h-40 bg-scroll overflow-auto mt-2">
       {movements.map((mov) => (
-        <BoxInfo name={mov.ability.name} urlDescription={mov.ability.url} />
+        <BoxInfo key={mov.ability.name} name={mov.ability.name} urlDescription={mov.ability.url} />
       ))}
     </section>
   );
