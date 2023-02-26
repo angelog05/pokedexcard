@@ -1,8 +1,15 @@
 import Layout from "../components/layout";
 import Head from "next/head";
-import fetch from "isomorphic-fetch";
+import { gsap } from "gsap";
+import { useEffect } from "react";
 
-const Index = (props) => {
+const Index = () => {
+  useEffect(() => {
+    gsap.from(".main-content", {
+      opacity: 0,
+      duration: 1,
+    });
+  }, []);
 
   return (
     <div className="main-content">
@@ -15,15 +22,5 @@ const Index = (props) => {
     </div>
   );
 };
-
-/*Index.getInitialProps = async (ctx) => {
-  
-  const result = await fetch(
-    "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151"
-  );
-  const data = await result.json();
-  
-  return { data };
-};*/
 
 export default Index;

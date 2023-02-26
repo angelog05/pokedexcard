@@ -11,8 +11,9 @@ const Pokemon = ({ pokemon }) => {
       <Head>
         <title>{pokemon.name.toUpperCase()}</title>
       </Head>
+
       <Layout>
-        <section className="pokemon w-4/5 bg-slate-100 rounded-lg bg-primary-50 pl-4 pr-4 pt-2 pb-3 h-2/3">
+        <section className="pokemon sm:w-2/4 xl:w-2/5 bg-slate-100 rounded-lg bg-primary-50 pl-4 pr-4 pt-2 pb-3 h-2/3">
           <article className="flex justify-between items-baseline">
             <h1 className="font-bold text-lg">{pokemon.name.toUpperCase()}</h1>
             <aside className="stats flex items-baseline">
@@ -22,7 +23,7 @@ const Pokemon = ({ pokemon }) => {
               </h1>
             </aside>
           </article>
-          <article className="bg-primary-300">
+          <article className="flex justify-center bg-primary-300">
             <img src={`${pokemon.sprites.other.home.front_default}`} />
           </article>
           <article className="movements">
