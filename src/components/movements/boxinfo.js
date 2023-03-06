@@ -3,7 +3,7 @@ import getAbility from "../../functions/movements";
 import { gsap } from "gsap";
 
 const BoxInfo = (props /* { name = "Default ability", urlDescription } */) => {
-  const [hidden, setHidden] = useState(true);
+  const [hidden, setHidden] = useState(false);
   const [description, setDescription] = useState("");
   const tl = gsap.timeline();
 
@@ -20,7 +20,10 @@ const BoxInfo = (props /* { name = "Default ability", urlDescription } */) => {
   return (
     <div key="boxinfo">
       <section
-        onClick={() => setHidden((prev) => !prev)}
+        onClick={() => {
+          setHidden((prev) => !prev);
+          console.log("click");
+        }}
         id={props.name}
         key={props.name}
         className="bg-primary-300 my-2 p-3 shadow-sm rounded-sm flex justify-between hover:bg-primary-500 focus:bg-primary-400 transition-colors focus:ring-offset-1 focus:ring"
@@ -29,13 +32,13 @@ const BoxInfo = (props /* { name = "Default ability", urlDescription } */) => {
           1
         )}`}</h1>
       </section>
-      <section
-        className={`-mt-2 p-2 ${hidden ? "hidden" : ""} flex description${
-          props.index
-        } shadow-sm mb-3 bg-primary-300 rounded-b-md`}
-      >
-        {description}
-      </section>
+      {hidden && (
+        <section
+          className={`-mt-2 p-2 flex description${props.index} shadow-sm mb-3 bg-primary-300 rounded-b-md`}
+        >
+          {description}
+        </section>
+      )}
     </div>
   );
 };
