@@ -4,7 +4,7 @@ import {
   HiOutlineChevronLeft, HiOutlineChevronRight, HiOutlineSearch
 } from "react-icons/hi";
 
-const Nav = () => {
+const Footer = () => {
   const [search, setSearch] = useState("");
   const router = useRouter();
 
@@ -33,6 +33,6 @@ const Nav = () => {
       </button>
     </div>
   )
-};
+}
 
-export default Nav;
+export default Footer;

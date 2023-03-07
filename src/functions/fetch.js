@@ -1,3 +1,21 @@
-//import useSWR from 'swr';
+import fetch from "isomorphic-fetch";
 
-//const fetcher = (...args) => fetch(...args).then(res => res.json())
+const URL_POKEMON = "https://pokeapi.co/api/v2/pokemon/"
+
+export const getPokemon = async id => {
+  const pokemon = await fetch(
+    `${URL_POKEMON}${id}`
+  ).then(async (poke) => {
+    const { name, sprites, stats, abilities } = await poke.json();
+
+    return {
+      name,
+      sprites,
+      stats,
+      abilities,
+    };
+  });
+
+  return { pokemon };
+};
+

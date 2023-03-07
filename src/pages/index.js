@@ -1,7 +1,7 @@
-import Layout from "../components/layout";
-import Head from "next/head";
 import { gsap } from "gsap";
+import Head from "next/head";
 import { useEffect } from "react";
+import Layout from "../components/layout";
 
 const Index = () => {
   useEffect(() => {
@@ -17,7 +17,9 @@ const Index = () => {
         <title>Home</title>
       </Head>
       <Layout>
-        <h1>Home</h1>
+        <section className="h-1/2">
+          <h1>Home</h1>
+        </section>
       </Layout>
     </div>
   );
