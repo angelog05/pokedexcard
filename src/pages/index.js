@@ -16,6 +16,7 @@ const Index = () => {
       <Head>
         <title>Home</title>
       </Head>
+
       <Layout>
         <section className="h-1/2">
           <h1>Home</h1>
