@@ -9,7 +9,7 @@ const Nav = () => {
   const router = useRouter();
 
   const searchPokemon = () => {
-    if (search.length) router.push(`/pokemon/${search}`);
+    if (search.length) router.push(`/pokemon/${search.toLowerCase()}`);
   }
 
   return (

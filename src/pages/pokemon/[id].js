@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Layout from "../../components/layout";
 import Movements from "../../components/movements";
 
+
 const Pokemon = ({ pokemon }) => {
   const router = useRouter();
   const [error, setError] = useState(false);
