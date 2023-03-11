@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from "react";
 import Layout from "../../components/layout";
 import Movements from "../../components/movements";
+import Loading from "../../components/loading";
 
 
 const Pokemon = ({ pokemon }) => {
@@ -43,7 +44,7 @@ const Pokemon = ({ pokemon }) => {
       </Head>
 
       <Layout> 
-        {isLoading && <div>Loading</div>}     
+        {isLoading && <Loading />}     
 
         {!isLoading && (
           <section className="pokemon max-w-sm sm:w-2/4 xl:w-2/5 bg-slate-100 rounded-lg bg-primary-50 pl-4 pr-4 pt-2 pb-3 mb-20">
