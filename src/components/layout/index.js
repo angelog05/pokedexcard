@@ -1,6 +1,7 @@
 import Nav from "../nav";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
+import Footer from "../footer"
 
 const Layout = (props) => {
   const router = useRouter();
@@ -36,11 +37,11 @@ const Layout = (props) => {
         }} */
         className="base-page-size"
       >
-        <div className="h-screen bg-primary-400">
-          <div className="pl-3 pr-3 pb-6 bg-primary-400">
+        <div className="h-screen bg-primary-50" style={{ background: 'linear-gradient(to left, #fdc830, #f37335)'}}>
+          <div className="pl-3 pr-3 pb-6 bg-primary-50" style={{ background: 'linear-gradient(to left, #fdc830, #f37335)'}}>
             <Nav />
             <div className="flex justify-center py-4">{props.children}</div>
-            {/* <Footer /> */}
+            <Footer />
           </div>
         </div>
       </motion.div>
@@ -49,3 +50,4 @@ const Layout = (props) => {
 };
 
 export default Layout;
+
