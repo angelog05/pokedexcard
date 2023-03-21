@@ -1,53 +1,35 @@
 import Nav from "../nav";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
-import Footer from "../footer"
+import Footer from "../footer";
 
 const Layout = (props) => {
   const router = useRouter();
   return (
     <AnimatePresence mode="wait">
-      <motion.div
-        key={router.route}
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{
-          type: "spring",
-          stiffness: 260,
-          damping: 20,
-        }}
-        /* initial="initialState"
-        animate="animateState"
-        exit="exitState"
-        transition={{
-          duration: 0.75,
-        }}
-        variants={{
-          initialState: { 
-            opacity: 0,
-            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
-          },
-          animateState: { 
-            opacity: 1,
-            clipPath: "polygon(0 0, 100% 0, 100& 100%, 0% 100%)",
-          },
-          exitState: { 
-            clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
-          },
-        }} */
-        className="base-page-size"
+      <section
+        className="flex justify-center content-center gradient-1 "
+        /* style={{ background: "linear-gradient(to left, #fdc830, #f37335)" }} */
       >
-        <div className="h-screen bg-primary-50" style={{ background: 'linear-gradient(to left, #fdc830, #f37335)'}}>
-          <div className="pl-3 pr-3 pb-6 bg-primary-50" style={{ background: 'linear-gradient(to left, #fdc830, #f37335)'}}>
-            <Nav />
-            <div className="flex justify-center py-4">{props.children}</div>
-            <Footer />
-          </div>
+        <div
+          className="px-2 bg-red-500 fixed top-0 w-full h-auto z-50"
+        >
+          <Nav />
         </div>
-      </motion.div>
+        <div
+          className="flex justify-center mt-40 py-10 px-5 w-full h-full"
+          /* style={{ background: "linear-gradient(to left, #fdc830, #f37335)" }} */
+        >
+          {props.children}
+        </div>
+        {/* <div
+          className="fixed bottom-0 w-full h-20 bg-red-500"
+        >
+          <Footer />
+        </div> */}
+      </section>
     </AnimatePresence>
   );
 };
 
 export default Layout;
-

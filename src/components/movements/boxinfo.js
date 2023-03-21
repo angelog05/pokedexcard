@@ -22,7 +22,6 @@ const BoxInfo = (props /* { name = "Default ability", urlDescription } */) => {
       <section
         onClick={() => {
           setHidden((prev) => !prev);
-          console.log("click");
         }}
         id={props.name}
         key={props.name}
@@ -41,10 +40,6 @@ const BoxInfo = (props /* { name = "Default ability", urlDescription } */) => {
       )}
     </div>
   );
-};
-
-BoxInfo.getInitialProps = async (props) => {
-  console.log("props+++", props);
 };
 
 export default BoxInfo;

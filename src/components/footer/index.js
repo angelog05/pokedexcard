@@ -5,7 +5,7 @@ const Footer = () => {
   const router = useRouter();
 
   return (
-    <section className="absolute bottom-0">
+    <section className="absolute bottom-0 w-full">
       Created by Bragui - angelog05
     </section>
   );

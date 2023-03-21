@@ -8,7 +8,9 @@ const getAbility = async (url) => {
       (item) => item.language.name == "en" || item.language.name == "es"
     );
 
-    return newEntries[0].effect;
+    const effect = newEntries[0]?.effect || "Can not recover this info :(";
+
+    return effect;
   });
 
   return result;

@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 import Layout from "../../components/layout";
 import Movements from "../../components/movements";
 import Loading from "../../components/loading";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
+import { getPokemon } from "../../functions/fetch";
 
 const Pokemon = ({ pokemon }) => {
   const router = useRouter();
@@ -13,7 +14,6 @@ const Pokemon = ({ pokemon }) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    console.log("effect");
     setIsLoading(true);
     if (pokemon.error) {
       setError(true);
@@ -81,33 +81,8 @@ const Pokemon = ({ pokemon }) => {
 };
 
 Pokemon.getInitialProps = async (ctx) => {
-  const pokemon = await fetch(
-    `https://pokeapi.co/api/v2/pokemon/${ctx.query.id}`
-  )
-    .then(async (poke) => {
-      const { name, sprites, stats, abilities } = await poke.json();
-
-      return {
-        name,
-        sprites,
-        stats,
-        abilities,
-      };
-    })
-    .catch((error) => {
-      return {
-        name: "",
-        sprites: {
-          other: {
-            home: "",
-          },
-        },
-        stats: {},
-        abilities: [],
-        error: true,
-        detailError: error,
-      };
-    });
+  const id = ctx.query.id;
+  const pokemon = await getPokemon(id);
 
   return { pokemon };
 };
