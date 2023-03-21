@@ -7,7 +7,7 @@ function Movements({ movements }) {
   return (
     <section className="bg-scroll overflow-auto mt-2">
       {movements?.map((mov, index) => (
-        <BoxInfo index={index} key={mov.ability.name} name={mov.ability.name} urlDescription={mov.ability.url} />
+        <BoxInfo index={index} key={`mov-${mov.ability.name}-${index}`} name={mov.ability.name} urlDescription={mov.ability.url} />
       ))}
     </section>
   );

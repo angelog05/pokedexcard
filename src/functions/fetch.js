@@ -14,8 +14,21 @@ export const getPokemon = async id => {
       stats,
       abilities,
     };
+  }).catch((error) => {
+    return {
+      name: "",
+      sprites: {
+        other: {
+          home: "",
+        },
+      },
+      stats: {},
+      abilities: [],
+      error: true,
+      detailError: error,
+    };
   });
 
-  return { pokemon };
+  return pokemon;
 };
 

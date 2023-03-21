@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import getAbility from "../../functions/movements";
 import { gsap } from "gsap";
+import React, { useEffect, useState } from "react";
+import getAbility from "../../functions/movements";
 
 const BoxInfo = (props /* { name = "Default ability", urlDescription } */) => {
   const [hidden, setHidden] = useState(false);
@@ -22,11 +22,10 @@ const BoxInfo = (props /* { name = "Default ability", urlDescription } */) => {
       <section
         onClick={() => {
           setHidden((prev) => !prev);
-          console.log("click");
         }}
         id={props.name}
         key={props.name}
-        className="bg-primary-300 my-2 p-3 shadow-sm rounded-sm flex justify-between hover:bg-primary-500 focus:bg-primary-400 transition-colors focus:ring-offset-1 focus:ring"
+        className="bg-primary-300 my-2 p-3 shadow-sm rounded-sm flex justify-between hover:bg-primary-500 focus:bg-primary-400 transition-colors focus:ring-offset-1 focus:ring font-semibold"
       >
         <h1>{`${props.name.slice(0, 1).toUpperCase()}${props.name.slice(
           1
@@ -41,10 +40,6 @@ const BoxInfo = (props /* { name = "Default ability", urlDescription } */) => {
       )}
     </div>
   );
-};
-
-BoxInfo.getInitialProps = async (props) => {
-  console.log("props+++", props);
 };
 
 export default BoxInfo;
