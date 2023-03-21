@@ -81,9 +81,7 @@ const Pokemon = ({ pokemon }) => {
 };
 
 Pokemon.getInitialProps = async (ctx) => {
-  const id = ctx.query.id;
-  const pokemon = await getPokemon(id);
-
+  const pokemon = await getPokemon(ctx.query.id);
   return { pokemon };
 };
 

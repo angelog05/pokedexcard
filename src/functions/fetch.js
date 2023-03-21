@@ -29,6 +29,6 @@ export const getPokemon = async id => {
     };
   });
 
-  return { pokemon };
+  return pokemon;
 };
 
