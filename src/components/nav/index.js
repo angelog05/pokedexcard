@@ -15,17 +15,17 @@ const Nav = () => {
     if (id.length) router.push(`/pokemon/${id}`);
   };
 
-
-
   const searchPokemonWithButtonReturn = () => {
     const id = parseInt(getPokemonId(router)) - 1;
-    setSearch("")
+    setSearch("");
     searchPokemon(id.toString());
   };
 
   const searchPokemonWithButtonNext = () => {
-    const id = parseInt(getPokemonId(router)) + 1;
-    setSearch("")
+    let id = parseInt(getPokemonId(router)) + 1;
+    if (!id) id = "1";
+
+    setSearch("");
     searchPokemon(id.toString());
   };
 
