@@ -5,6 +5,7 @@ import {
   HiOutlineChevronLeft,
   HiOutlineChevronRight,
   HiOutlineSearch,
+  HiOutlineHome
 } from "react-icons/hi";
 
 const Nav = () => {
@@ -31,12 +32,20 @@ const Nav = () => {
 
   return (
     <div className="px-2 py-4 grid grid-cols-6 gap-1">
+      <button
+        type="button"
+        tabIndex={2}
+        className="btn-primary bg-yellow-300 w-10"
+        onClick={() => router.push('/')}
+      >
+        <HiOutlineHome />
+      </button>
       <input
         tabIndex={1}
         type="text"
         required
         placeholder="ID or name..."
-        className="input-primary col-start-1 col-end-4"
+        className="input-primary col-start-2 col-end-4"
         onChange={(e) => setSearch(e.target.value)}
         value={search}
       />
