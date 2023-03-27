@@ -19,7 +19,7 @@ const Index = () => {
 
       <Layout>
         <section className="h-1/2">
-          <h1>Home</h1>
+          <h1>Pokemon</h1>
         </section>
       </Layout>
     </div>
