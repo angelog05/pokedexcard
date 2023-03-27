@@ -16,8 +16,8 @@ const Layout = (props) => {
           <Nav />
         </div>
         <div
-          className="flex justify-center py-10 px-5"
-          style={{ marginTop: 60 }}
+          className="flex justify-center py-10 px-5 w-full h-full"
+          style={{ marginTop: 75 }}
         >
           {props.children}
         </div>
