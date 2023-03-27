@@ -49,12 +49,16 @@ const Pokemon = ({ pokemon }) => {
         {!isLoading && (
           <motion.div
             key={router.route}
-            animate={{
-              rotate: "360deg",
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
             }}
-            className="pokemon max-w-sm sm:w-2/4 xl:w-2/5 bg-slate-100 rounded-lg bg-primary-100 pl-4 pr-4 pt-2 pb-3 mb-20 shadow-lg"
+            className="pokemon max-w-sm sm:w-2/4 xl:w-2/5 bg-slate-100 rounded-lg bg-primary-100 pl-4 pr-4 pt-2 pb-3 shadow-sm"
           >
-            <section>
+            <section className="main-pokemon">
               <article className="flex justify-between items-baseline">
                 <h1 className="font-bold text-lg">
                   {pokemon?.name.toUpperCase()}
